@@ -69,6 +69,9 @@ Finally, reassemble the guitar fully using the screws. Place the plastic front p
 # Part 2: Code
 Don't get too excited, the next part is even more important! Download a ZIP of the master of this repo so you have access to its files. Take the ArduinoGuitarHero folder inside libraries and place it where Arduino has placed your library folder (For me, it was Documents/Arduino/libraries). Once placed, also download the master ZIP of [UnoJoy](https://github.com/AlanChatham/UnoJoy), which is the software that is going to allow us to turn the Uno into what you would usually use an [Arduino Leonardo](https://store.arduino.cc/usa/arduino-leonardo-with-headers) for, interfacing seamlessly as a device. Place the UnoJoy subfolder into the Arduino folder as well. This folder should container `UnoJoy.h`, which will be needed to compile the ArduinoGuitarHero sketch. Finally, with libraries in place, open up `ArduinoGuitarHero.ino` which should be located inside ArduinoSketch/ArduinoGuitarHero of this repo. The current setup is basic bindings to a game controller for use in Clone Hero, but you may modify it as needed. When ready, connect the Arduino to your computer via the Type B USB and upload the sketch.
 
+#### Optional but recommended: Fixing the I2C Clock Speed
+The Wire library for Arduino actually runs at a lower clockrate than what is reccommended for the I2C clock speed (10kHz vs. 40kHz). This can be fixed by modifiying `twi.h` in `\Program Files\Arduino\hardware\arduino\avr\libraries\Wire\src\utility`. Change the define of TWI_FREQ from `100000L` to `400000L`. Save your change and open up the `ArduinoGuitarHero.ino` sketch. Generally, Arduino IDE and avrdude will compile the libraries only once to save time, which means compiling now will still use the slow version of `twi.h`. To remedy this, change your target Arduino device to a random other device and click Verify to compile but not attempt uploading. This will cause the IDE to rebuild the libraries. Then, swap back to Arduino Uno as your target platform and Verify again, which will again rebuild the libraries now for the Uno.
+
 #### DFU Mode and UnoJoy
 With code uploaded to the Arduino, it's time to convert it to a joystick. The [UnoJoy README](https://github.com/AlanChatham/UnoJoy) is a really good resource for this step. Follow the Drivers step to get yourself set up. The next we will be doing is Hardware, however, I found part of their description confusing so here is what I found worked stepwise with my Arduino. The Hardware step is to enter your Arduino into DFU mode, which will allow you to reprogram the communication chips on the Arduino. To enter your Arduino into DFU mode, use some wire or a breadboard connecter to (while still plugged into your computer) short the two connectors that are boxed in.
 ![step8](https://i.imgur.com/erqv4xd.jpg)
@@ -84,11 +87,6 @@ Verify that all the functions on your guitar appear in Windows correctly (Neck B
 
 #### Play!
 Boot up your game of choice, bind their functions to the keys, and enjoy!
-
-# Troubleshooting
-
-#### Inputs being dropped? Inputs seem delayed?
-The Wire library for Arduino actually runs at a lower clockrate than what is reccommended for the I2C clock speed (10kHz vs. 40kHz). This can be fixed by modifiying `twi.h` in `\Program Files\Arduino\hardware\arduino\avr\libraries\Wire\src\utility`. Change the define of TWI_FREQ from `100000L` to `400000L`. Save your change and open up the `ArduinoGuitarHero.ino` sketch. Generally, Arduino IDE and avrdude will compile the libraries only once to save time, which means compiling now will still use the slow version of `twi.h`. To remedy this, change your target Arduino device to a random other device and click Verify to compile but not attempt uploading. This will cause the IDE to rebuild the libraries. Then, swap back to Arduino Uno as your target platform and Verify again, which will again rebuild the libraries now for the Uno. With the Wire library now updated, upload the new code and libraries to the Arduino and convert it to a Joystick with UnoJoy.
 
 ## Credits and References
 - Huge thanks to WiiBrew for their wonderful information on [Guitar Hero Wii Guitars](http://wiibrew.org/wiki/Wiimote/Extension_Controllers/Guitar_Hero_(Wii)_Guitars)
