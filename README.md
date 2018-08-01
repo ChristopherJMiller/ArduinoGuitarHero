@@ -92,3 +92,4 @@ Boot up your game of choice, bind their functions to the keys, and enjoy!
 - Huge thanks to WiiBrew for their wonderful information on [Guitar Hero Wii Guitars](http://wiibrew.org/wiki/Wiimote/Extension_Controllers/Guitar_Hero_(Wii)_Guitars)
 - Thanks to [ConnorJC](https://github.com/ccatlett2000) for the aid on figuring out the wire correlations.
 - Credit to Gabriel Bianconi's [ArduinoNunchuck library](https://github.com/GabrielBianconi/arduino-nunchuk), which was a basis for the ArduinoGuitarHero library.
+- Thanks to [Acai](https://www.twitch.tv/acai) for making me want to play Clone Hero so bad I did this.
