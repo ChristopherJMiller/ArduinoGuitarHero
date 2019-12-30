@@ -5,10 +5,10 @@ For converting a Wii Wireless Guitar Hero 3 Controller into a wired one for PC.
 Guitar Hero for PC, especially through games such as [Clone Hero](http://clonehero.net/), has allowed the rhythm game to be touched by a large community of talented and devoted song charters. Growing up, I played a lot of Guitar Hero 3 for the Wii and still had the old wireless controller. So, wanting to play some Clone Hero, I bought a $20 dollar classic controller to USB (The Classic Controller is the port on the bottom of Wii Remotes) off of [Amazon](https://www.amazon.com/Mayflash-Wii-Classic-Controller-Adapter/dp/B07BN49ZFR). It didn't work for guitars, and looking into how the guitar worked it seemed as if it was solely on the blame of the adapter maker not wanting to deal with the data conversion. So, I did it myself using an Arduino Uno.
 
 ### Words of Warning
-- This tutorial has no support for **Guitar Hero World Tour Wii Guitars**, only Guitar Hero 3 Wii Guitars..
-- Make sure you are willing to part with the guitar for usage on the Wii, as this tutorial does include keeping it usable for Wii Guitar Hero play.
+- This tutorial has no support for **Guitar Hero World Tour Wii Guitars**, only Guitar Hero 3 Wii Guitars.
+- Make sure you are willing to part with the guitar for usage on the Wii, as this tutorial doesn't include keeping it usable for Wii Guitar Hero play.
 - All photos of this project were taken after the project was completed. As such, some cuts into the plastic are visible that would not be there on your guitar.
-- This will "void the guitars warranty", however, I believe at the time of writing this [those are illegal now?](https://www.npr.org/sections/thetwo-way/2018/04/11/601582169/warranty-void-if-removed-as-it-turns-out-feds-say-those-warnings-are-illegal)
+- This will "void the guitars warranty", however, I believe at the time of writing this [those statements are illegal now?](https://www.npr.org/sections/thetwo-way/2018/04/11/601582169/warranty-void-if-removed-as-it-turns-out-feds-say-those-warnings-are-illegal)
 
 ## Equipment
 - GH3 Wii Controller
