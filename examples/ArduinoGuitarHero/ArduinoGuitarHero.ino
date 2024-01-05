@@ -1,5 +1,3 @@
-
-
 /*
    Arduino Guitar Hero
    A Part of the Guitar Hero Arduino Project at chrismiller.xyz
@@ -36,11 +34,11 @@ dataForController_t getControllerData(void)
   controllerData.startOn = guitar.BPlus == 1;
 
   //Use analog stick bindings for the controller joystick
-  controllerData.leftStickX = guitar.sX;
-  controllerData.leftStickY = guitar.sY;
+  controllerData.leftStickX = map(guitar.sX, 0, 63, 0, 255); // 0 -> 63
+  controllerData.leftStickY = map(guitar.sY, 0, 63, 0, 255);
 
-  controllerData.l1On = guitar.WB > 2;
-
+  controllerData.rightStickX = map(guitar.WB, -16, 16, 0, 255); // -16 -> 16 (about 12 on a real guitar, 16 is absolute maximum guitar controller can report)
+  //Serial.println(controllerData.leftStickX);
   return controllerData;
 }
 
